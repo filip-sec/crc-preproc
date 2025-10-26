@@ -7,8 +7,13 @@ from PIL import Image
 
 from .io_utils import slide_key
 from .qc import save_qc
-from .tiler import tile_wsi
 from .tissue import extract_s_channel, make_thumbnail, otsu_mask
+
+# Try to use Numba-optimized tiler, fallback to regular if not available
+try:
+    from .tiler_numba import tile_wsi_fast as tile_wsi
+except ImportError:
+    from .tiler import tile_wsi
 
 
 def process_one(
