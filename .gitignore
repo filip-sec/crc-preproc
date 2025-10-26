@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (don't commit WSI files)
+data/wsi/
+data/images/tiles/
+data/images/thumbs/
+data/labels/*_tiles.csv
+data/labels/tiles_index.csv
+data/labels/slides_index.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
