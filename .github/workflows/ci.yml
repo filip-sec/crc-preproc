@@ -27,7 +27,7 @@ jobs:
         black --check crc_preproc/
     - name: Check import sorting with isort
       run: |
-        isort --check-only crc_preproc/
+        isort --profile black --line-length 127 --check-only crc_preproc/
 
   test:
     runs-on: ubuntu-latest
