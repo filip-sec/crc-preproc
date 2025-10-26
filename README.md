@@ -53,7 +53,6 @@ python -m crc_preproc.cli \
 #   --tile_px 512          # Tile size in pixels
 #   --relax                 # Use 95% tissue threshold (default: 100%)
 #   --skip_existing         # Skip already processed slides
-#   --num_workers 4        # Number of parallel workers for tiling
 
 # Process single slide (testing)
 python -m crc_preproc.cli \

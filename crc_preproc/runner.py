@@ -2,13 +2,13 @@
 
 import numpy as np
 import openslide
-from PIL import Image
 import pandas as pd
+from PIL import Image
 
 from .io_utils import slide_key
-from .tissue import make_thumbnail, extract_s_channel, otsu_mask
-from .tiler import tile_wsi
 from .qc import save_qc
+from .tiler import tile_wsi
+from .tissue import extract_s_channel, make_thumbnail, otsu_mask
 
 
 def process_one(
@@ -19,7 +19,6 @@ def process_one(
     tile_px=512,
     strict=True,
     skip=False,
-    num_workers=4,
 ):
     """Process a single WSI: thumbnail, mask, tile, save CSV."""
     slide_id = slide_key(wsi_path)
@@ -70,7 +69,6 @@ def process_one(
         slide_id,
         tile_px,
         strict,
-        num_workers,
     )
     slide.close()
 

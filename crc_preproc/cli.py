@@ -2,8 +2,9 @@
 
 import argparse
 from pathlib import Path
-from tqdm import tqdm
+
 import pandas as pd
+from tqdm import tqdm
 
 from .labels import build_labels
 from .runner import process_one
@@ -20,7 +21,6 @@ def main():
     ap.add_argument("--tile_px", type=int, default=512)
     ap.add_argument("--relax", action="store_true")
     ap.add_argument("--skip_existing", action="store_true")
-    ap.add_argument("--num_workers", type=int, default=4)
     args = ap.parse_args()
 
     wsi_dir, out_root = Path(args.wsi_dir), Path(args.out_dir)
@@ -42,7 +42,6 @@ def main():
                 args.tile_px,
                 strict=not args.relax,
                 skip=args.skip_existing,
-                num_workers=args.num_workers,
             )
             total_tiles += saved
             print(

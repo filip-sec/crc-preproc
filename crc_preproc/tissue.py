@@ -1,7 +1,7 @@
 """Tissue detection via thumbnail and Otsu masking."""
 
-import numpy as np
 import cv2
+import numpy as np
 
 
 def make_thumbnail(slide, downsample=32):

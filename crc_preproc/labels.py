@@ -1,7 +1,8 @@
 """Load slide-level labels from CSV."""
 
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 from .io_utils import slide_key
 
